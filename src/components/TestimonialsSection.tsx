@@ -171,7 +171,7 @@ export default function TestimonialsSection({ testimonials = defaultTestimonials
                     <div className="text-sm opacity-80 mb-6">{testimonial.content}</div>
                   </div>
                   <div className="flex items-center gap-3 mt-4">
-                    <Image src={testimonial.avatar} alt={testimonial.name} className="w-8 h-8 rounded-full border-2 border-white/30" />
+                    <Image src={testimonial.avatar} alt={testimonial.name} width={32} height={32} className="w-8 h-8 rounded-full border-2 border-white/30" />
                     <div>
                       <div className="font-semibold text-sm">{testimonial.name}</div>
                       <div className="text-xs opacity-70">{testimonial.company}</div>

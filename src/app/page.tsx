@@ -7,6 +7,7 @@ import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import Image from 'next/image';
+import ImageSlideshow from '@/components/ImageSlideshow';
 
 export default function Home() {
   return (
@@ -82,6 +83,7 @@ export default function Home() {
       <AchievementSection />
       <TestimonialsSection />
       <CaseStudiesSection />
+      <ImageSlideshow />
       <BannerSection />
     </div>
   );
