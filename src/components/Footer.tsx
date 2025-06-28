@@ -44,7 +44,7 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             <li><Link href="#" className="hover:underline">Pricing</Link></li>
             <li><Link href="#" className="hover:underline">Pricing Calculator</Link></li>
-            <li><Link href="#" className="hover:underline">Developer's Document</Link></li>
+            <li><Link href="#" className="hover:underline">Developer&apos;s Document</Link></li>
             <li><Link href="#" className="hover:underline">FAQs</Link></li>
             <li><Link href="#" className="hover:underline">Knowledge Base</Link></li>
             <li><Link href="#" className="hover:underline">Industry Solutions</Link></li>
@@ -85,6 +85,9 @@ export default function Footer() {
           <Link href="#" className="hover:underline">Terms of Service</Link>
         </div>
       </div>
+      <p className="text-gray-300 mb-4 max-w-md">
+        Building the future of cloud computing with innovative solutions that scale with your business needs.
+      </p>
     </footer>
   );
 } 

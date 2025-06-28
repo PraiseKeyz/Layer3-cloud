@@ -61,7 +61,7 @@ export default function AchievementSection() {
             You Can Count On Us
           </h2>
           <p className="text-gray-600 text-lg mb-10">
-            At Layer3, We've achieved these certifications to demonstrate our commitment to superior professionalism, upholding industry standard, and global best practices.
+            At Layer3, We&apos;ve achieved these certifications to demonstrate our commitment to superior professionalism, upholding industry standard, and global best practices.
           </p>
           
           <div className="grid grid-cols-3 gap-x-4 mb-10">

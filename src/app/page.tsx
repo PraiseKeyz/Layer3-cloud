@@ -1,4 +1,3 @@
-import Image from "next/image";
 import herosectionbg from '@/assets/image.png'
 import ArrowRight from '@/components/ArrowRight';
 import services from '@/data/service.json';
@@ -7,7 +6,7 @@ import BannerSection from "@/components/BannerSection";
 import WhyChooseUsSection from "@/components/WhyChooseUsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
-
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -35,7 +34,7 @@ export default function Home() {
           </div>
           {/* Headline */}
           <h1 className="md:text-5xl font-bold text-center mb-6">
-            Africa's Cloud.<br />
+            Africa&apos;s Cloud.<br />
             Local Performance. Global Standards.
           </h1>
           {/* Subtext */}
@@ -43,7 +42,7 @@ export default function Home() {
             Built for the demands of businesses across Africa, Layer3Cloud delivers secure, scalable cloud infrastructure with low latency, local support, and flexible pricing.
           </p>
           {/* CTA Button */}
-          <button className="bg-red-500 hover:bg-red-600 cursor-pointer text-white font-semibold px-8 py-3 rounded-lg text-lg shadow transition-colors">
+          <button className="bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-3 rounded-lg text-lg shadow transition-colors">
             Talk to Sales
           </button>
         </div>
@@ -62,12 +61,12 @@ export default function Home() {
 
         {/* Services Grid */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-20 px-2">
-          {services.map((service, idx) => (
+          {services.map((service) => (
             <div
               key={service.title}
               className={`flex flex-col items-center rounded-2xl p-8 shadow-sm border transition hover:shadow-lg bg-white ${service.highlight ? 'bg-indigo-50 border-indigo-100' : 'border-gray-200'}`}
             >
-              <img src={service.image} alt={service.title} className="w-35 h-35 mb-6" />
+              <Image src={service.image} alt={service.title} width={96} height={96} className="mb-6" />
               <h3 className="text-lg font-semibold text-gray-900 mb-2 text-center">{service.title}</h3>
               <p className="text-gray-600 text-center mb-6">{service.description}</p>
               <a href="#" className="text-red-600 font-medium flex items-center gap-1 hover:underline group">

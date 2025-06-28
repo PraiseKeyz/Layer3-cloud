@@ -112,7 +112,7 @@ export default function TestimonialsSection({ testimonials = defaultTestimonials
           <div className="mb-10 mt-10 md:mt-0">
             <div className="flex flex-col items-center">
               <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold text-center leading-tight max-w-3xl">
-                Our Clients' Experience Speaks Volume
+                Our Clients&apos; Experience Speaks Volume
               </h2>
             </div>
           </div>
@@ -171,7 +171,7 @@ export default function TestimonialsSection({ testimonials = defaultTestimonials
                     <div className="text-sm opacity-80 mb-6">{testimonial.content}</div>
                   </div>
                   <div className="flex items-center gap-3 mt-4">
-                    <img src={testimonial.avatar} alt={testimonial.name} className="w-8 h-8 rounded-full border-2 border-white/30" />
+                    <Image src={testimonial.avatar} alt={testimonial.name} className="w-8 h-8 rounded-full border-2 border-white/30" />
                     <div>
                       <div className="font-semibold text-sm">{testimonial.name}</div>
                       <div className="text-xs opacity-70">{testimonial.company}</div>
