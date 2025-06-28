@@ -3,7 +3,7 @@ import Image from 'next/image';
 import whyUsImage from '@/assets/why-choose-us-section-image.webp'
 
 interface Feature {
-  icon: React.ComponentType<any>;
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
   title: string;
 }
 

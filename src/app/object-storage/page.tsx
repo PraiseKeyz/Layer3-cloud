@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import herosection from '@/assets/object-storage/herosection.png';
-import caseSudyBg from '@/assets/case-studies-bg.svg'
+// import caseSudyBg from '@/assets/case-studies-bg.svg'
 import bgImage1 from '@/assets/object-storage/image.png'
 import FAQSection from '@/components/FAQSection';
 import mapImage from '@/assets/object-storage/map.png'

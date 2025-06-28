@@ -123,7 +123,7 @@ export default function TestimonialsSection({ testimonials = defaultTestimonials
               className="rounded-2xl p-8 flex flex-col justify-between min-w-[260px] max-w-[300px] text-white min-h-[260px] items-start"
               style={{ backgroundColor: 'rgb(255 255 255 / 0.01)' }}
             >
-              <div className="text-5xl font-bold mb-6">"</div>
+              <div className="text-5xl font-bold mb-6">&quot;</div>
               <div className="flex-1 flex flex-col justify-center items-start">
                 <div className="text-xl font-medium mb-2 text-left">What our customers are saying</div>
               </div>
