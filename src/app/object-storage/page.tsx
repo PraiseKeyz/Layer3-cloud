@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import herosection from '@/assets/object-storage/herosection.png';
-// import caseSudyBg from '@/assets/case-studies-bg.svg'
+import caseStudiesBg from '@/assets/case-studies-bg.svg';
 import bgImage1 from '@/assets/object-storage/image.png'
 import FAQSection from '@/components/FAQSection';
 import mapImage from '@/assets/object-storage/map.png'
@@ -117,15 +117,15 @@ export default function ObjectStoragePage() {
               </nav>
             </div>
             {/* Main Heading */}
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-2xl md:text-3xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Object Storage
             </h1>
             {/* Description */}
-            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed max-w-2xl">
               S3-compatible object storage solution for scalable, secure, and resilient data storage.
             </p>
             {/* CTA Button */}
-            <button className="bg-red-600 hover:bg-red-700 cursor-pointer text-white font-semibold px-8 py-3 rounded-lg text-lg shadow transition-colors">
+            <button className="bg-red-600 hover:bg-red-700 cursor-pointer text-white font-semibold px-4 py-3 rounded-lg text-sm shadow transition-colors">
               Talk to Sales
             </button>
           </div>
@@ -183,25 +183,37 @@ export default function ObjectStoragePage() {
       </section>
 
       {/* Wavy Blue Background Section */}
-      <section className="relative  flex overflow-hidden py-20">
+      <section className="relative w-full overflow-hidden py-20">
         {/* Wavy SVG Background */}
         <div className="absolute inset-0 w-full h-full">
-          
-  </div>
-        <div className="relative z-10 w-full max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-12 px-4">
+          <Image 
+            src={caseStudiesBg} 
+            alt="Background Pattern" 
+            className="w-full h-auto block"
+            style={{ 
+              display: 'block',
+              transform: 'scaleX(1.2)',
+              transformOrigin: 'center'
+            }}
+          />
+        </div>
+        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-16 px-4 sm:px-6 lg:px-8">
           {/* Left: 3D Cloud Image Placeholder */}
-          <div className="flex-1 flex justify-center">
-            {/* Replace with your actual 3D cloud image */}
-            <div className="w-64 h-64 flex items-center justify-center">
-              <Image src={bgImage1} alt="Cloud Storage 3D" className="w-full h-full object-contain" />
+          <div className="flex-1 flex justify-center lg:justify-start">
+            <div className="w-full max-w-md lg:max-w-lg">
+              <Image 
+                src={bgImage1} 
+                alt="Cloud Storage 3D" 
+                className="w-full h-auto object-contain" 
+              />
             </div>
           </div>
           {/* Right: Text and Button */}
-          <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left">
-            <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold mb-6 max-w-md">
+          <div className="flex-1 flex flex-col items-center lg:items-start lg:text-left max-w-lg">
+            <h2 className="text-white text-2xl sm:text-3xl lg:text-3xl font-bold mb-6 leading-tight">
               Ready to Simplify Your Data Storage Strategy with Scalable, Secure Object Storage?
             </h2>
-            <button className="bg-red-600 hover:bg-red-700 cursor-pointer text-white font-semibold px-6 py-3 rounded-lg text-base flex items-center gap-2 transition-colors shadow">
+            <button className="bg-red-600 hover:bg-red-700 cursor-pointer text-white font-semibold px-6 py-3 rounded-lg text-sm flex items-center gap-2 transition-colors shadow-lg hover:shadow-xl self-start">
               Contact Sales
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
@@ -211,7 +223,7 @@ export default function ObjectStoragePage() {
         </div>
       </section>
 
-            {/* Data Centers Section */}
+      {/* Data Centers Section */}
       <section className="bg-[#E9ECF6]/30 mt-24 py-24 px-4">
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
           <span className="text-red-600 font-semibold text-base mb-2">Data Centers</span>
@@ -239,7 +251,6 @@ export default function ObjectStoragePage() {
         buttonText="Read More"
         buttonHref="/faqs"
       />
-
 
     </div>
   );

@@ -13,6 +13,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,11 +25,16 @@ export default function Header() {
   }, []);
 
   const handleDropdownEnter = (dropdownName: string) => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
     setActiveDropdown(dropdownName);
   };
 
   const handleDropdownLeave = () => {
-    setActiveDropdown(null);
+    const timeout = setTimeout(() => setActiveDropdown(null), 150);
+    setCloseTimeout(timeout);
   };
   const pathname = usePathname();
   const isObjectStorage = pathname === '/object-storage';
@@ -59,7 +65,9 @@ export default function Header() {
                 <ChevronDown size={16} />
               </div>
               {activeDropdown === 'product' && (
-                <Product/>
+                <div className="absolute left-0 top-full z-50 -mt-1">
+                  <Product/>
+                </div>
               )}
             </div>
 
@@ -74,7 +82,9 @@ export default function Header() {
                 <ChevronDown size={16} />
               </div>
               {activeDropdown === 'resources' && (
-                <Resources />
+                <div className="absolute left-0 top-full z-50 -mt-1">
+                  <Resources />
+                </div>
               )}
             </div>
 
@@ -94,7 +104,9 @@ export default function Header() {
                 <ChevronDown size={16} />
               </div>
               {activeDropdown === 'partners' && (
-                <Partners/>
+                <div className="absolute left-0 top-full z-50 -mt-1">
+                  <Partners/>
+                </div>
               )}
             </div>
 
@@ -109,7 +121,9 @@ export default function Header() {
                 <ChevronDown size={16} />
               </div>
               {activeDropdown === 'company' && (
-                <Company />
+                <div className="absolute left-0 top-full z-50 -mt-1">
+                  <Company />
+                </div>
               )}
             </div>
           </div>
