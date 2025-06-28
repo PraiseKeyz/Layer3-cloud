@@ -5,6 +5,7 @@ import caseStudiesBg from '@/assets/case-studies-bg.svg';
 import bgImage1 from '@/assets/object-storage/image.png'
 import FAQSection from '@/components/FAQSection';
 import mapImage from '@/assets/object-storage/map.png'
+import bgImage from '@/assets/object-storage/bg-image.png'
 
 const objectStorageFeatures = [
   {
@@ -78,22 +79,39 @@ const faqs = [
 
 const objectStorageUseCases = [
   {
-    icon: '', // placeholder for SVG/icon
+    icon: <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 12C0 5.37258 5.37258 0 12 0H38C44.6274 0 50 5.37258 50 12V38C50 44.6274 44.6274 50 38 50H12C5.37258 50 0 44.6274 0 38V12Z" fill="#E9ECF6"/>
+    <path d="M18.6998 29.1984C15.9936 29.1984 13.7998 27.0046 13.7998 24.2984C13.7998 21.7667 15.7199 19.6834 18.1832 19.4253C18.0635 18.9698 17.9998 18.4916 17.9998 17.9984C17.9998 14.9056 20.507 12.3984 23.5998 12.3984C26.2302 12.3984 28.437 14.212 29.0381 16.6569C29.3198 16.6183 29.6075 16.5984 29.8998 16.5984C33.3792 16.5984 36.1998 19.419 36.1998 22.8984C36.1998 26.3778 33.3792 29.1984 29.8998 29.1984H26.3998V24.1783L28.2099 25.9884C28.7566 26.5351 29.643 26.5351 30.1898 25.9884C30.7365 25.4417 30.7365 24.5552 30.1898 24.0085L25.9898 19.8085C25.443 19.2618 24.5566 19.2618 24.0099 19.8085L19.8099 24.0085C19.2631 24.5552 19.2631 25.4417 19.8099 25.9884C20.3566 26.5351 21.243 26.5351 21.7898 25.9884L23.5998 24.1783L23.5998 29.1984H18.6998Z" fill="#2143A6"/>
+    <path d="M23.5998 29.1984H26.3998L26.3998 36.1984C26.3998 36.9716 25.773 37.5984 24.9998 37.5984C24.2266 37.5984 23.5998 36.9716 23.5998 36.1984L23.5998 29.1984Z" fill="#2143A6"/>
+    </svg>
+    , // placeholder for SVG/icon
     title: 'Backup & DR',
     description: 'Automatically store snapshots, backups, and recovery data with built-in redundancy and encryption—seamlessly integrate with tools like Veeam or Velero to automate workflows and ensure your data is protected.'
   },
   {
-    icon: '', // placeholder for SVG/icon
+    icon: <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 12C0 5.37258 5.37258 0 12 0H38C44.6274 0 50 5.37258 50 12V38C50 44.6274 44.6274 50 38 50H12C5.37258 50 0 44.6274 0 38V12Z" fill="#E9ECF6"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5998 15.2031C15.0534 15.2031 13.7998 16.4567 13.7998 18.0031V32.0031C13.7998 33.5495 15.0534 34.8031 16.5998 34.8031H33.3998C34.9462 34.8031 36.1998 33.5495 36.1998 32.0031V18.0031C36.1998 16.4567 34.9462 15.2031 33.3998 15.2031H16.5998ZM20.7998 18.0031L29.1998 18.0031V23.6031H20.7998V18.0031ZM31.9998 29.2031V32.0031H33.3998V29.2031H31.9998ZM29.1998 26.4031H20.7998V32.0031H29.1998V26.4031ZM31.9998 26.4031H33.3998V23.6031H31.9998V26.4031ZM33.3998 20.8031V18.0031H31.9998V20.8031H33.3998ZM17.9998 18.0031V20.8031H16.5998V18.0031H17.9998ZM17.9998 23.6031H16.5998V26.4031H17.9998V23.6031ZM16.5998 29.2031H17.9998V32.0031H16.5998V29.2031Z" fill="#2143A6"/>
+    </svg>
+    , // placeholder for SVG/icon
     title: 'Media storage for apps',
     description: 'Store and serve high-quality video, audio, and image files with ease—perfect for web apps, mobile platforms, and content-heavy services that demand speed, scalability, and reliability.'
   },
   {
-    icon: '', // placeholder for SVG/icon
+    icon: <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 12C0 5.37258 5.37258 0 12 0H38C44.6274 0 50 5.37258 50 12V38C50 44.6274 44.6274 50 38 50H12C5.37258 50 0 44.6274 0 38V12Z" fill="#E9ECF6"/>
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0002 15.2031C16.4538 15.2031 15.2002 16.4567 15.2002 18.0031V32.0031C15.2002 33.5495 16.4538 34.8031 18.0002 34.8031H32.0002C33.5466 34.8031 34.8002 33.5495 34.8002 32.0031V18.0031C34.8002 16.4567 33.5466 15.2031 32.0002 15.2031H18.0002ZM30.6002 20.8031C30.6002 20.0299 29.9734 19.4031 29.2002 19.4031C28.427 19.4031 27.8002 20.0299 27.8002 20.8031V29.2031C27.8002 29.9763 28.427 30.6031 29.2002 30.6031C29.9734 30.6031 30.6002 29.9763 30.6002 29.2031V20.8031ZM26.4002 23.6031C26.4002 22.8299 25.7734 22.2031 25.0002 22.2031C24.227 22.2031 23.6002 22.8299 23.6002 23.6031V29.2031C23.6002 29.9763 24.227 30.6031 25.0002 30.6031C25.7734 30.6031 26.4002 29.9763 26.4002 29.2031V23.6031ZM22.2002 27.8031C22.2002 27.0299 21.5734 26.4031 20.8002 26.4031C20.027 26.4031 19.4002 27.0299 19.4002 27.8031V29.2031C19.4002 29.9763 20.027 30.6031 20.8002 30.6031C21.5734 30.6031 22.2002 29.9763 22.2002 29.2031V27.8031Z" fill="#2143A6"/>
+    </svg>
+    , // placeholder for SVG/icon
     title: 'Analytics and AI datasets',
     description: 'Store and access large datasets for machine learning, AI training, and analytics workflows—built for performance, scalability, and easy integration with your data pipelines and cloud-native tools.'
   },
   {
-    icon: '', // placeholder for SVG/icon
+    icon: <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 12C0 5.37258 5.37258 0 12 0H38C44.6274 0 50 5.37258 50 12V38C50 44.6274 44.6274 50 38 50H12C5.37258 50 0 44.6274 0 38V12Z" fill="#E9ECF6"/>
+    <path d="M18.6998 33.4016C15.9936 33.4016 13.7998 31.2078 13.7998 28.5016C13.7998 25.9698 15.7199 23.8866 18.1832 23.6285C18.0635 23.1729 17.9998 22.6947 17.9998 22.2016C17.9998 19.1088 20.507 16.6016 23.5998 16.6016C26.2302 16.6016 28.437 18.4151 29.0381 20.86C29.3198 20.8215 29.6075 20.8016 29.8998 20.8016C33.3792 20.8016 36.1998 23.6222 36.1998 27.1016C36.1998 30.581 33.3792 33.4016 29.8998 33.4016H18.6998Z" fill="#2143A6"/>
+    </svg>
+    , // placeholder for SVG/icon
     title: 'Hybrid/multi-cloud integrations',
     description: 'Seamless data movement across clouds—easily integrate with public and private cloud environments to enable flexibility, avoid vendor lock-in, and support your evolving infrastructure strategy.'
   }
@@ -255,3 +273,4 @@ export default function ObjectStoragePage() {
     </div>
   );
 }
+
