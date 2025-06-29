@@ -8,6 +8,7 @@ import TestimonialSection from '@/components/TestimonialSection';
 import WaveFeatureSection from '@/components/WaveFeatureSection';
 import vdcUseCasesRaw from '@/data/vdc-use-cases.json';
 import vdcFeaturesRaw from '@/data/vdc-features.json';
+import DataCenter from '@/components/DataCenter';
 
 // SVG icon mapping
 const iconMap = {
@@ -159,6 +160,9 @@ export default function VdcPage() {
   imageAlt="Virtual Machine Illustration"
   reverse={true}
 />
+        <DataCenter />
+        <TestimonialSection />
+
         <FAQSection
         label="FAQs"
         heading="Frequently Asked Questions"
@@ -167,7 +171,6 @@ export default function VdcPage() {
         buttonText="Read More"
         buttonHref="/faqs"
       />
-      <TestimonialSection />
       </div>
     )
 }
