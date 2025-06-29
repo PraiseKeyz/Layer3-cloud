@@ -37,7 +37,7 @@ export default function Header() {
     setCloseTimeout(timeout);
   };
   const pathname = usePathname();
-  const isObjectStorage = pathname === '/object-storage';
+  const isObjectStorage = pathname === '/object-storage' || pathname === '/virtual-data-center' || pathname === '/virtual-server';
 
   return (
     <header className={`fixed w-full top-0 z-50 transition-all duration-300 ${

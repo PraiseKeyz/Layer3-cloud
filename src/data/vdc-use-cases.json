@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "building",
+    "title": "Hosting Internal Business Applications",
+    "description": "Deploy, maintain, and scale your business-critical applications in a secure private cloud environment.",
+    "bullets": [
+      "Reliable uptime for business continuity",
+      "Dedicated resources for optimal performance",
+      "Enhanced security for sensitive data"
+    ]
+  },
+  {
+    "icon": "kubernetes",
+    "title": "Running Scalable Production, Development/Test Environments",
+    "description": "Create isolated environments for production, development, testing, and staging with the ability to scale as needed.",
+    "bullets": [
+      "Rapid provisioning of test environments",
+      "Cost-effective resource utilization",
+      "Consistent environments across development stages"
+    ]
+  },
+  {
+    "icon": "users",
+    "title": "Supporting Remote Work Infrastructure",
+    "description": "Enable secure remote access to business resources for distributed teams with reliable performance.",
+    "bullets": [
+      "Secure VPN access for remote employees",
+      "Centralized management of remote resources",
+      "Scalable capacity for changing workforce needs"
+    ]
+  }
+] 

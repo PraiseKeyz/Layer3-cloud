@@ -1,0 +1,30 @@
+[
+  {
+    "title": "A wonderful Alternative",
+    "text": "A great alternative for on-premise hardware resource. Now we are not scared of physical damage to equipment or data loss.",
+    "author": "Solomon Musa",
+    "role": "NASSCO",
+    "image": "/assets/placeholder1.jpg"
+  },
+  {
+    "title": "An Efficient Company",
+    "text": "Layer3Cloud is wonderful. I don't know we can still have a company so reliable, responsive and efficient here in Nigeria. Please well done and happy working with you.",
+    "author": "Biyi Fafunmi",
+    "role": "NBS",
+    "image": "/assets/placeholder2.jpg"
+  },
+  {
+    "title": "Very Swift",
+    "text": "I admire the level of support offered, they are swift in resolving clients issues. Thumbs Up.",
+    "author": "Bode Prince",
+    "role": "NCTO",
+    "image": "/assets/placeholder3.jpg"
+  },
+  {
+    "title": "Reliable Partner",
+    "text": "Layer3Cloud has been a reliable partner for our business continuity. Their support is top-notch.",
+    "author": "Jane Doe",
+    "role": "Tech Lead, ExampleCorp",
+    "image": "/assets/placeholder4.jpg"
+  }
+] 

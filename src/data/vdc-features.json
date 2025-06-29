@@ -1,0 +1,27 @@
+[
+  {
+    "icon": "cube",
+    "title": "Central Dashboard for VM Management",
+    "description": "Manage all your virtual machines from a single intuitive interface with real-time status monitoring."
+  },
+  {
+    "icon": "cube",
+    "title": "Infrastructure as Code (IaC) support",
+    "description": "Define and provision your infrastructure programmatically with support for Terraform, Ansible, and other IaC tools."
+  },
+  {
+    "icon": "cube",
+    "title": "Real-time Monitoring & Analytics",
+    "description": "Track performance metrics, set up alerts, and visualize your infrastructure health with comprehensive analytics."
+  },
+  {
+    "icon": "cube",
+    "title": "Self-Service Portal for provisioning",
+    "description": "Provision resources on demand through an intuitive portal designed for both developers and IT administrators."
+  },
+  {
+    "icon": "cube",
+    "title": "Managed Security Services included",
+    "description": "Comprehensive security features including firewall, intrusion detection, to protect your environment."
+  }
+] 
