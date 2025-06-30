@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import herosection from "@/assets/platform-as-a-service/herosection.png";
 import waveFeatureImage from "@/assets/virtua-data-center/wavefeature-image.png";
 import FAQSection from "@/components/FAQSection";
