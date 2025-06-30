@@ -5,13 +5,14 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
   title: "LayerCloud - Cloud Computing Solutions",
-  description: "Building the future of cloud computing with innovative solutions that scale with your business needs.",
+  description:
+    "Building the future of cloud computing with innovative solutions that scale with your business needs.",
 };
 
 export default function RootLayout({
@@ -24,9 +25,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans`}>
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </div>
       </body>

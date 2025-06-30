@@ -1,5 +1,5 @@
-import Link from 'next/link';
-import Image, { StaticImageData } from 'next/image';
+import Link from "next/link";
+import Image, { StaticImageData } from "next/image";
 
 interface HeroSectionProps {
   heroImage: StaticImageData | string;
@@ -18,7 +18,7 @@ export default function HeroSection({
   description,
   breadcrumbText,
   buttonText = "Talk to Sales",
-  buttonOnClick
+  buttonOnClick,
 }: HeroSectionProps) {
   return (
     <section className="overflow-hidden py-34 md:py-20 px-4 sm:px-6 lg:px-16">
@@ -32,7 +32,9 @@ export default function HeroSection({
                 Home
               </Link>
               <span className="text-gray-400">/</span>
-              <span className="text-gray-700 font-medium">{breadcrumbText}</span>
+              <span className="text-gray-700 font-medium">
+                {breadcrumbText}
+              </span>
             </nav>
           </div>
           {/* Main Heading */}
@@ -44,7 +46,7 @@ export default function HeroSection({
             {description}
           </p>
           {/* CTA Button */}
-          <button 
+          <button
             className="bg-red-600 hover:bg-red-700 cursor-pointer text-white font-semibold px-3 py-2 rounded-lg text-sm shadow transition-colors"
             onClick={buttonOnClick}
           >
@@ -54,8 +56,8 @@ export default function HeroSection({
         {/* Right Content - Image */}
         <div className="flex-1 flex justify-center lg:justify-end w-full">
           <div className="w-full max-w-lg lg:max-w-xl">
-            <Image 
-              src={heroImage} 
+            <Image
+              src={heroImage}
               alt={heroImageAlt}
               className="w-full h-auto rounded-2xl"
               priority
@@ -65,4 +67,4 @@ export default function HeroSection({
       </div>
     </section>
   );
-} 
+}

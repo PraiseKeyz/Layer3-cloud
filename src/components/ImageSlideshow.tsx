@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -18,11 +18,11 @@ const ImageSlideshow = () => {
             <div className="mx-4 flex-shrink-0" key={idx}>
               <Image
                 src={img}
-                alt={`Slide ${idx % images.length + 1}`}
+                alt={`Slide ${(idx % images.length) + 1}`}
                 className=""
                 width={220}
                 height={140}
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: "cover" }}
               />
             </div>
           ))}
@@ -30,8 +30,12 @@ const ImageSlideshow = () => {
       </div>
       <style jsx global>{`
         @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
         }
         .animate-marquee {
           animation: marquee 18s linear infinite;
@@ -41,4 +45,4 @@ const ImageSlideshow = () => {
   );
 };
 
-export default ImageSlideshow; 
+export default ImageSlideshow;

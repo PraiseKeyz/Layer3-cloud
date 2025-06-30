@@ -1,35 +1,33 @@
-
-
 [
-    {
-      "image": "/infrastructure-as-a-service.svg",
-      "title": "Infrastructure as a Service (IaaS)",
-      "description": "Create, manage, and scale virtual machines within a secure private cloud environment."
-    },
-    {
-      "image": "/object-storage.svg",
-      "title": "Object Storage",
-      "description": "S3-compatible object storage solution for scalable, secure, and resilient data storage.",
-      "highlight": true
-    },
-    {
-      "image": "/backup-as-a-service.svg",
-      "title": "Backup-as-a-Service (BaaS)",
-      "description": "Automated backup for VMs, databases, SaaS, and cloud-native apps."
-    },
-    {
-      "image": "/kubernetes-service.svg",
-      "title": "Kubernetes Service",
-      "description": "Deploy containerized applications on a production-ready managed Kubernetes cluster."
-    },
-    {
-      "image": "/disaster-recovery-as-a-service.svg",
-      "title": "Disaster Recovery-as-a-Service",
-      "description": "Enterprise-grade DR with near-zero RTO/RPO, replication, and instant failover."
-    },
-    {
-      "image": "/platform-as-a-service.svg",
-      "title": "Platform as a Service (PaaS)",
-      "description": "A ready-to-use development environment with fully managed runtime and middleware."
-    }
-  ]
+  {
+    "image": "/infrastructure-as-a-service.svg",
+    "title": "Infrastructure as a Service (IaaS)",
+    "description": "Create, manage, and scale virtual machines within a secure private cloud environment."
+  },
+  {
+    "image": "/object-storage.svg",
+    "title": "Object Storage",
+    "description": "S3-compatible object storage solution for scalable, secure, and resilient data storage.",
+    "highlight": true
+  },
+  {
+    "image": "/backup-as-a-service.svg",
+    "title": "Backup-as-a-Service (BaaS)",
+    "description": "Automated backup for VMs, databases, SaaS, and cloud-native apps."
+  },
+  {
+    "image": "/kubernetes-service.svg",
+    "title": "Kubernetes Service",
+    "description": "Deploy containerized applications on a production-ready managed Kubernetes cluster."
+  },
+  {
+    "image": "/disaster-recovery-as-a-service.svg",
+    "title": "Disaster Recovery-as-a-Service",
+    "description": "Enterprise-grade DR with near-zero RTO/RPO, replication, and instant failover."
+  },
+  {
+    "image": "/platform-as-a-service.svg",
+    "title": "Platform as a Service (PaaS)",
+    "description": "A ready-to-use development environment with fully managed runtime and middleware."
+  }
+]
