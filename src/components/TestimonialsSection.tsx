@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import caseSudyBg from "@/assets/case-studies-bg.svg";
+import case2 from "@/assets/mobile-svg.svg";
 
 interface Testimonial {
   title: string;
@@ -71,38 +72,47 @@ export default function TestimonialsSection({
   testimonials = defaultTestimonials,
 }: TestimonialsSectionProps) {
   const [carouselPosition, setCarouselPosition] = useState(0);
+  const carouselRef = useRef<HTMLDivElement>(null);
 
-  // Handle carousel scroll events
+  // Update carousel position on scroll (for swiping)
   useEffect(() => {
-    const carousel = document.querySelector(".testimonial-carousel");
-    if (carousel) {
-      const handleScroll = () => {
-        const scrollLeft = carousel.scrollLeft;
-        const cardWidth = 300; // Approximate width of each card + gap
-        const newPosition = Math.round(scrollLeft / cardWidth);
-        setCarouselPosition(
-          Math.max(0, Math.min(testimonials.length - 1, newPosition)),
-        );
-      };
+    const carousel = carouselRef.current;
+    if (!carousel) return;
 
-      carousel.addEventListener("scroll", handleScroll);
-      return () => carousel.removeEventListener("scroll", handleScroll);
-    }
+    const handleScroll = () => {
+      const scrollLeft = carousel.scrollLeft;
+      const cardWidth = 320; // Adjust to match your card width + gap
+      const newPosition = Math.round(scrollLeft / cardWidth);
+      setCarouselPosition(
+        Math.max(0, Math.min(testimonials.length - 1, newPosition)),
+      );
+    };
+
+    carousel.addEventListener("scroll", handleScroll, { passive: true });
+    return () => carousel.removeEventListener("scroll", handleScroll);
   }, [testimonials.length]);
 
-  // Disable desktop scrolling
+  // Disable wheel scroll on desktop
   useEffect(() => {
-    const carousel = document.querySelector(".testimonial-carousel");
+    const carousel = carouselRef.current;
     if (carousel && window.innerWidth >= 768) {
-      // md breakpoint
       const handleWheel = (e: Event) => {
         e.preventDefault();
       };
-
       carousel.addEventListener("wheel", handleWheel, { passive: false });
       return () => carousel.removeEventListener("wheel", handleWheel);
     }
   }, []);
+
+  // Scroll to card when arrow or dot is clicked
+  const scrollToCard = (idx: number) => {
+    const carousel = carouselRef.current;
+    if (carousel) {
+      const cardWidth = 320; // Adjust to match your card width + gap
+      carousel.scrollTo({ left: idx * cardWidth, behavior: "smooth" });
+      setCarouselPosition(idx);
+    }
+  };
 
   return (
     <section className="bg-white flex justify-center items-center overflow-x-hidden">
@@ -110,9 +120,17 @@ export default function TestimonialsSection({
         <Image
           src={caseSudyBg}
           alt="Case Studies Background"
-          className="w-full h-auto block"
+          className="w-full h-auto hidden md:block"
           style={{
-            display: "block",
+            transform: "scaleX(1.2)",
+            transformOrigin: "center",
+          }}
+        />
+        <Image
+          src={case2}
+          alt="Case Studies Background"
+          className="w-full h-auto block md:hidden"
+          style={{
             transform: "scaleX(1.2)",
             transformOrigin: "center",
           }}
@@ -121,7 +139,6 @@ export default function TestimonialsSection({
         <div
           className="absolute inset-0 flex flex-col items-center justify-center w-full max-w-full"
           style={{
-            pointerEvents: "none",
             top: "10%",
             left: "0",
             right: "0",
@@ -130,78 +147,26 @@ export default function TestimonialsSection({
         >
           {/* Section Title */}
           <div className="mb-10 mt-10 md:mt-0">
-            <div className="flex flex-col items-center">
-              <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold text-center leading-tight max-w-3xl">
+            <div className="flex flex-col items-start">
+              <h2 className="text-white text-2xl md:text-3xl lg:text-4xl font-bold text-left mx-4 leading-tight max-w-3xl">
                 Our Clients&apos; Experience Speaks Volume
               </h2>
             </div>
           </div>
-          {/* Cards Row */}
-          <div
-            className="flex flex-row gap-6 w-full max-w-6xl px-4 md:px-0 items-stretch justify-center pointer-events-auto overflow-x-auto"
-            style={{ WebkitOverflowScrolling: "touch" }}
-          >
-            {/* Quote Card */}
+          {/* Carousel Cards */}
+          <div className="w-full flex flex-col items-center">
             <div
-              className="rounded-2xl p-8 flex flex-col justify-between min-w-[260px] max-w-[300px] text-white min-h-[260px] items-start"
-              style={{ backgroundColor: "rgb(255 255 255 / 0.01)" }}
-            >
-              <div className="text-5xl font-bold mb-6">&quot;</div>
-              <div className="flex-1 flex flex-col justify-center items-start">
-                <div className="text-xl font-medium mb-2 text-left">
-                  What our customers are saying
-                </div>
-              </div>
-              <div className="flex items-center justify-between mt-8 w-full">
-                <button
-                  onClick={() => {
-                    const carousel = document.querySelector(
-                      ".testimonial-carousel",
-                    );
-                    if (carousel) {
-                      carousel.scrollBy({ left: -300, behavior: "smooth" });
-                      setCarouselPosition(Math.max(0, carouselPosition - 1));
-                    }
-                  }}
-                  className="text-2xl hover:text-white transition-colors p-2 rounded-lg bg-transparent"
-                >
-                  ←
-                </button>
-                <div
-                  className="h-1 bg-white/20 rounded-full mx-2 transition-all duration-300 flex-1"
-                  style={{
-                    width: `${100 / testimonials.length}px`,
-                    transform: `translateX(${carouselPosition * (100 / testimonials.length)}px)`,
-                    maxWidth: "80px",
-                  }}
-                ></div>
-                <button
-                  onClick={() => {
-                    const carousel = document.querySelector(
-                      ".testimonial-carousel",
-                    );
-                    if (carousel) {
-                      carousel.scrollBy({ left: 300, behavior: "smooth" });
-                      setCarouselPosition(
-                        Math.min(testimonials.length - 1, carouselPosition + 1),
-                      );
-                    }
-                  }}
-                  className="text-2xl hover:text-white transition-colors p-2 rounded-lg bg-transparent"
-                >
-                  →
-                </button>
-              </div>
-            </div>
-            {/* Carousel Cards */}
-            <div
-              className="flex-1 flex gap-6 pb-2 min-w-0 testimonial-carousel"
-              style={{ scrollbarWidth: "none", overflowX: "auto" }}
+              ref={carouselRef}
+              className="flex gap-6 pb-2 min-w-0 testimonial-carousel overflow-x-auto scrollbar-hide snap-x snap-mandatory w-full max-w-6xl px-4 md:px-0"
+              style={{
+                scrollbarWidth: "none",
+                WebkitOverflowScrolling: "touch",
+              }}
             >
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 min-w-[280px] max-w-[340px] w-full text-white shadow-lg flex flex-col justify-between"
+                  className="bg-white/10 backdrop-blur-lg rounded-2xl p-6 min-w-full md:min-w-[280px] md:max-w-[320px] w-full text-white shadow-lg flex flex-col justify-between snap-center"
                 >
                   <div>
                     <div className="font-semibold text-base mb-2">
@@ -230,6 +195,46 @@ export default function TestimonialsSection({
                   </div>
                 </div>
               ))}
+            </div>
+            {/* Progress Dots: only show on mobile */}
+            <div className="flex md:hidden justify-center mt-4 gap-2 pointer-events-auto">
+              {testimonials.map((_, idx) => (
+                <button
+                  key={idx}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    carouselPosition === idx ? "bg-white" : "bg-white/40"
+                  }`}
+                  onClick={() => scrollToCard(idx)}
+                  aria-label={`Go to testimonial ${idx + 1}`}
+                />
+              ))}
+            </div>
+            {/* Arrows: only show on desktop */}
+            <div className="hidden md:flex items-center justify-center mt-6 w-full">
+              <button
+                onClick={() => scrollToCard(Math.max(0, carouselPosition - 1))}
+                className="text-2xl hover:text-white transition-colors p-2 rounded-lg bg-transparent"
+              >
+                ←
+              </button>
+              <div
+                className="h-1 bg-white/20 rounded-full mx-2 transition-all duration-300 flex-1"
+                style={{
+                  width: `${100 / testimonials.length}px`,
+                  transform: `translateX(${carouselPosition * (100 / testimonials.length)}px)`,
+                  maxWidth: "80px",
+                }}
+              ></div>
+              <button
+                onClick={() =>
+                  scrollToCard(
+                    Math.min(testimonials.length - 1, carouselPosition + 1),
+                  )
+                }
+                className="text-2xl hover:text-white transition-colors p-2 rounded-lg bg-transparent"
+              >
+                →
+              </button>
             </div>
           </div>
         </div>

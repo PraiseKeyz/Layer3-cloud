@@ -41,7 +41,10 @@ export default function Header() {
     pathname === "/object-storage" ||
     pathname === "/virtual-data-center" ||
     pathname === "/virtual-server" ||
-    pathname === "/platform-as-a-service";
+    pathname === "/platform-as-a-service" ||
+    pathname === "/backup-service" ||
+    pathname === "/disaster-recovery" ||
+    pathname === "/kubernetes";
 
   return (
     <header

@@ -1,13 +1,17 @@
 "use client";
 
+import Image from "next/image";
 import herosection from "@/assets/platform-as-a-service/herosection.png";
 import waveFeatureImage from "@/assets/virtua-data-center/wavefeature-image.png";
 import FAQSection from "@/components/FAQSection";
 import HeroSection from "@/components/HeroSection";
 import WaveFeatureSection from "@/components/WaveFeatureSection";
 import React from "react";
+import infrastructure from "@/assets/platform-as-a-service/infracture.png";
+import baas from "@/assets/platform-as-a-service/baas.png";
+import disaster from "@/assets/platform-as-a-service/disaster.png";
 
-const features = [
+export const features = [
   {
     icon: (
       <svg
@@ -194,84 +198,21 @@ const paasComponents = [
 
 const additionalProducts = [
   {
-    svg: (
-      <svg
-        width="120"
-        height="120"
-        viewBox="0 0 120 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <rect x="10" y="40" width="80" height="50" rx="8" fill="#E9ECF6" />
-          <rect x="30" y="60" width="40" height="20" rx="4" fill="#2143A6" />
-          <rect x="70" y="50" width="20" height="30" rx="4" fill="#fff" />
-          <circle cx="50" cy="55" r="10" fill="#fff" />
-          <path
-            d="M50 60V50M50 50L47 53M50 50L53 53"
-            stroke="#2143A6"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        </g>
-      </svg>
-    ),
+    svg: infrastructure,
     title: "Object Storage",
     description:
       "S3-compatible object storage solution for scalable, secure, and resilient data storage.",
     link: "/object-storage",
   },
   {
-    svg: (
-      <svg
-        width="120"
-        height="120"
-        viewBox="0 0 120 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <ellipse cx="60" cy="80" rx="40" ry="20" fill="#E9ECF6" />
-          <rect x="40" y="60" width="40" height="30" rx="6" fill="#2143A6" />
-          <rect x="55" y="70" width="10" height="10" rx="2" fill="#fff" />
-          <circle cx="60" cy="65" r="7" fill="#fff" />
-          <path
-            d="M60 72V65M60 65L57 68M60 65L63 68"
-            stroke="#2143A6"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        </g>
-      </svg>
-    ),
+    svg: baas,
     title: "Backup-as-a-Service (BaaS)",
     description:
       "Automated backup for VMs, databases, SaaS, and cloud-native apps",
     link: "/backup-as-a-service",
   },
   {
-    svg: (
-      <svg
-        width="120"
-        height="120"
-        viewBox="0 0 120 120"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <g>
-          <rect x="20" y="50" width="80" height="40" rx="8" fill="#E9ECF6" />
-          <rect x="35" y="60" width="50" height="20" rx="4" fill="#2143A6" />
-          <rect x="70" y="65" width="15" height="10" rx="2" fill="#fff" />
-          <circle cx="45" cy="70" r="6" fill="#fff" />
-          <path
-            d="M45 74V70M45 70L43 72M45 70L47 72"
-            stroke="#2143A6"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        </g>
-      </svg>
-    ),
+    svg: disaster,
     title: "Disaster Recovery-as-a-Service",
     description:
       "Enterprise-grade DR with near-zero RTO/RPO, replication, and instant failover.",
@@ -347,7 +288,14 @@ export default function PlatformService() {
                 key={idx}
                 className="bg-white rounded-2xl p-8 flex flex-col items-center text-center shadow-md"
               >
-                <div className="mb-6">{product.svg}</div>
+                <div className="relative w-32 h-32 mx-auto mb-6">
+                  <Image
+                    src={product.svg}
+                    alt="product image"
+                    fill
+                    className="object-contain p-4"
+                  />
+                </div>
                 <h4 className="font-bold text-xl text-gray-900 mb-3">
                   {product.title}
                 </h4>
