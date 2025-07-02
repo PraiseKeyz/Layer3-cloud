@@ -10,7 +10,7 @@ import featureImage3 from "@/assets/disaster-recovery/feature-image3.png";
 import featureImage4 from "@/assets/disaster-recovery/feature-image4.png";
 import caseSudyBg from "@/assets/case-studies-bg.svg";
 import case2 from "@/assets/case2.svg";
-import { features } from "../platform-as-a-service/page";
+import { features } from "@/data/platfromFeatures";
 
 const faqs = [
   {
