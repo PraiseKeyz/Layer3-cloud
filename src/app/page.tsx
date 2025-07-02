@@ -114,7 +114,13 @@ export default function Home() {
       <TestimonialsSection />
       <CaseStudiesSection />
       <ImageSlideshow />
-      <BannerSection />
+      <BannerSection
+        title="Take Your Business to The Next Level"
+        subtitle="Let's discuss how we can help you transform your business with our cloud services."
+        primaryButtonText="Talk to Sales"
+        secondaryButtonText="Request a Demo"
+        onPrimaryClick={() => {}}
+      />
     </div>
   );
 }

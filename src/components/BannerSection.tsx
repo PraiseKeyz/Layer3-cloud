@@ -1,17 +1,21 @@
+"use client";
+
+import image from "@/assets/kubernetes/image.png";
+
 interface BannerSectionProps {
-  title?: string;
-  subtitle?: string;
-  primaryButtonText?: string;
+  title: string;
+  subtitle: string;
+  primaryButtonText: string;
   secondaryButtonText?: string;
-  onPrimaryClick?: () => void;
+  onPrimaryClick: () => void;
   onSecondaryClick?: () => void;
 }
 
 export default function BannerSection({
-  title = "Take Your Business to The Next Level",
-  subtitle = "Lets Discuss how we can help you transform your business with our cloud servicess",
-  primaryButtonText = "Talk to Sales",
-  secondaryButtonText = "Request a Demo",
+  title,
+  subtitle,
+  primaryButtonText,
+  secondaryButtonText,
   onPrimaryClick,
   onSecondaryClick,
 }: BannerSectionProps) {
@@ -56,15 +60,13 @@ export default function BannerSection({
       <div
         className="absolute inset-0 z-0"
         style={{
-          background: "url(/optimized/img.webp) center/cover no-repeat",
+          background: `url(${image.src}) center/cover no-repeat`,
           opacity: 0.18,
         }}
       ></div>
-      {/* Subtle blue overlay for readability */}
-      <div className="absolute inset-0 bg-[#10205B] opacity-90 z-0"></div>
       {/* Content - Constrained width */}
       <div className="relative z-20 flex flex-col items-center justify-center w-full max-w-4xl mx-auto text-center">
-        <h2 className="text-white text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        <h2 className="text-white text-2xl md:text-4xl font-bold mb-6 leading-tight">
           {title}
         </h2>
         <p className="text-white/90 text-base md:text-lg mb-8 max-w-xl mx-auto">
@@ -77,12 +79,14 @@ export default function BannerSection({
           >
             {primaryButtonText}
           </button>
-          <button
-            onClick={onSecondaryClick}
-            className="border-2 border-[#eb1c2a] text-[#eb1c2a] hover:bg-[#eb1c2a] hover:text-white px-6 py-2 rounded-lg font-semibold text-base transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400"
-          >
-            {secondaryButtonText}
-          </button>
+          {secondaryButtonText && (
+            <button
+              onClick={onSecondaryClick}
+              className="border-2 border-[#eb1c2a] text-[#eb1c2a] hover:bg-[#eb1c2a] hover:text-white px-6 py-2 rounded-lg font-semibold text-base transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-400"
+            >
+              {secondaryButtonText}
+            </button>
+          )}
         </div>
       </div>
     </section>

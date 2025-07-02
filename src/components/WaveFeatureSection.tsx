@@ -18,7 +18,7 @@ export default function WaveFeatureSection({
   reverse = false,
 }: WaveFeatureSectionProps) {
   return (
-    <section className="bg-white flex justify-center items-center overflow-x-hidden">
+    <section className=" flex justify-center items-center overflow-x-hidden">
       <div className="w-full relative max-w-full overflow-x-hidden">
         <Image
           src={caseStudyBg}
