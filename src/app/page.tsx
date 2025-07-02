@@ -1,3 +1,5 @@
+"use client"
+
 import herosectionbg from "@/assets/image.png";
 import ArrowRight from "@/components/ArrowRight";
 import services from "@/data/service.json";
