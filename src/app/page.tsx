@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import herosectionbg from "@/assets/image.png";
 import ArrowRight from "@/components/ArrowRight";

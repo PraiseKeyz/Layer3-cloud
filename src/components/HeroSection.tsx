@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
@@ -67,9 +67,7 @@ export default function HeroSection({
             {description}
           </p>
           {/* CTA Button */}
-          <button
-            className="bg-red-600 hover:bg-red-700 cursor-pointer text-white font-semibold px-3 py-2 rounded-lg text-sm shadow transition-colors"
-          >
+          <button className="bg-red-600 hover:bg-red-700 cursor-pointer text-white font-semibold px-3 py-2 rounded-lg text-sm shadow transition-colors">
             {buttonText}
           </button>
         </div>

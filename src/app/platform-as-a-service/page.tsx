@@ -92,7 +92,6 @@ const paasComponents = [
   },
 ];
 
-
 export default function PlatformService() {
   return (
     <div>
