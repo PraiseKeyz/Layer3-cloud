@@ -3,6 +3,54 @@
 import HeroSection from "@/components/HeroSection";
 import BannerSection from "@/components/BannerSection";
 
+const contactCards = [
+  {
+    title: 'Sales Team',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3.5 5.83333C3.5 4.54467 4.54467 3.5 5.83333 3.5H9.65911C10.1613 3.5 10.6071 3.82134 10.7659 4.29773L12.5134 9.54008C12.697 10.0909 12.4476 10.6929 11.9283 10.9525L9.29484 12.2692C10.5808 15.1214 12.8786 17.4192 15.7308 18.7052L17.0475 16.0717C17.3071 15.5524 17.9091 15.303 18.4599 15.4866L23.7023 17.2341C24.1787 17.3929 24.5 17.8387 24.5 18.3409V22.1667C24.5 23.4553 23.4553 24.5 22.1667 24.5H21C11.335 24.5 3.5 16.665 3.5 7V5.83333Z" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    descriptions: [
+      'Are you considering starting your cloud journey? Our team of experts is ready to assist you.',
+      'For a Seamless experience, please send an email to ',
+      '<a href="mailto:help@layer3.com.ng" class="underline">help@layer3.com.ng</a>.'
+    ],
+    linkText: 'Fill the form Below →',
+    linkHref: '#sales-form',
+  },
+  {
+    title: 'Technical Support',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M18.6673 8.16667C18.6673 10.744 16.578 12.8333 14.0007 12.8333C11.4233 12.8333 9.33398 10.744 9.33398 8.16667C9.33398 5.58934 11.4233 3.5 14.0007 3.5C16.578 3.5 18.6673 5.58934 18.6673 8.16667Z" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M14.0007 16.3333C9.49033 16.3333 5.83398 19.9897 5.83398 24.5H22.1673C22.1673 19.9897 18.511 16.3333 14.0007 16.3333Z" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    descriptions: [
+      'Our Technical Team is available for our customers 24/7, round the clock.',
+      'If you have created an account, Please submit a ticket, your issues will be attended to shortly.'
+    ],
+    linkText: 'Submit a Ticket →',
+    linkHref: '#support-ticket',
+  },
+  {
+    title: 'FAQs',
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9.59894 10.5C10.2396 9.14061 11.9682 8.16667 14.0001 8.16667C16.5774 8.16667 18.6667 9.73367 18.6667 11.6667C18.6667 13.2993 17.1762 14.6709 15.16 15.0577C14.5272 15.1791 14.0001 15.689 14.0001 16.3333M14 19.8333H14.0117M24.5 14C24.5 19.799 19.799 24.5 14 24.5C8.20101 24.5 3.5 19.799 3.5 14C3.5 8.20101 8.20101 3.5 14 3.5C19.799 3.5 24.5 8.20101 24.5 14Z" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    descriptions: [
+      'Read our FAQs to get answers or find more information about our company.',
+      'For a Seamless experience, please send an email to ',
+      '<a href="mailto:help@layer3.com.ng" class="underline">help@layer3.com.ng</a>.'
+    ],
+    linkText: 'Read FAQs →',
+    linkHref: '#faqs',
+  },
+]; 
+
 export default function Contact() {
   return (
     <div>
@@ -26,134 +74,29 @@ export default function Contact() {
           </h3>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-8 md:mx-auto">
-          {/* Sales Team Card */}
-          <div className="border rounded-xl p-8 transition-shadow hover:shadow-lg border-[1.5px] border-[#12255B] hover:border-[#E11D48] flex flex-col h-full">
-            <div className="mb-4 flex items-center text-2xl">
-              <span className="mr-2">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
+          {contactCards.map((card, idx) => (
+            <div
+            key={idx}
+            className="p-[2px] rounded-xl transition-shadow hover:shadow-lg h-full"
+            style={{
+              background: 'linear-gradient(360deg, #8D2EC3 0%, #2143A6 100%)'
+            }}
+          >
+              <div className="bg-white rounded-xl p-8 flex flex-col h-full">
+                <span className="mr-2">{card.icon}</span>
+                <span className="font-semibold text-[#282828] text-xl">{card.title}</span>
+                {card.descriptions.map((desc, i) => (
+                  <p key={i} className="text-[#434343] mb-4" dangerouslySetInnerHTML={{ __html: desc }} />
+                ))}
+                <a
+                  href={card.linkHref}
+                  className="mt-auto text-sm text-[#EB1C29] font-normal flex items-center"
                 >
-                  <path
-                    d="M3.5 5.83333C3.5 4.54467 4.54467 3.5 5.83333 3.5H9.65911C10.1613 3.5 10.6071 3.82134 10.7659 4.29773L12.5134 9.54008C12.697 10.0909 12.4476 10.6929 11.9283 10.9525L9.29484 12.2692C10.5808 15.1214 12.8786 17.4192 15.7308 18.7052L17.0475 16.0717C17.3071 15.5524 17.9091 15.303 18.4599 15.4866L23.7023 17.2341C24.1787 17.3929 24.5 17.8387 24.5 18.3409V22.1667C24.5 23.4553 23.4553 24.5 22.1667 24.5H21C11.335 24.5 3.5 16.665 3.5 7V5.83333Z"
-                    stroke="#0F172A"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <span className="font-semibold text-[#282828] text-xl">
-                Sales Team
-              </span>
+                  {card.linkText}
+                </a>
+              </div>
             </div>
-            <p className="text-[#434343] mb-4">
-              Are you considering starting your cloud journey? Our team of
-              experts is ready to assist you.
-            </p>
-            <p className="text-[#434343] mb-4">
-              For a Seamless experience, please send an email to{" "}
-              <a href="mailto:help@layer3.com.ng" className="underline">
-                help@layer3.com.ng
-              </a>
-              .
-            </p>
-            <a
-              href="#sales-form"
-              className="mt-auto text-sm text-[#EB1C29] font-normal flex items-center"
-            >
-              Fill the form Below <span className="ml-1">→</span>
-            </a>
-          </div>
-          {/* Technical Support Card */}
-          <div className="border rounded-xl p-8 transition-shadow hover:shadow-lg border-[1.5px] border-[#12255B] hover:border-[#E11D48] flex flex-col h-full">
-            <div className="mb-4 flex items-center text-2xl">
-              <span className="mr-2">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M18.6673 8.16667C18.6673 10.744 16.578 12.8333 14.0007 12.8333C11.4233 12.8333 9.33398 10.744 9.33398 8.16667C9.33398 5.58934 11.4233 3.5 14.0007 3.5C16.578 3.5 18.6673 5.58934 18.6673 8.16667Z"
-                    stroke="#0F172A"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M14.0007 16.3333C9.49033 16.3333 5.83398 19.9897 5.83398 24.5H22.1673C22.1673 19.9897 18.511 16.3333 14.0007 16.3333Z"
-                    stroke="#0F172A"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <span className="font-semibold text-[#282828] text-xl">
-                Technical Support
-              </span>
-            </div>
-            <p className="text-[#434343] mb-4">
-              Our Technical Team is available for our customers 24/7, round the
-              clock.
-            </p>
-            <p className="text-[#434343] mb-4">
-              If you have created an account, Please submit a ticket, your
-              issues will be attended to shortly.
-            </p>
-            <a
-              href="#support-ticket"
-              className="mt-auto text-sm text-[#EB1C29] font-normal flex items-center"
-            >
-              Submit a Ticket <span className="ml-1">→</span>
-            </a>
-          </div>
-          {/* FAQs Card */}
-          <div className="border rounded-xl p-8 transition-shadow hover:shadow-lg border-[1.5px] border-[#12255B] hover:border-[#E11D48] flex flex-col h-full">
-            <div className="mb-4 flex items-center text-2xl">
-              <span className="mr-2">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.59894 10.5C10.2396 9.14061 11.9682 8.16667 14.0001 8.16667C16.5774 8.16667 18.6667 9.73367 18.6667 11.6667C18.6667 13.2993 17.1762 14.6709 15.16 15.0577C14.5272 15.1791 14.0001 15.689 14.0001 16.3333M14 19.8333H14.0117M24.5 14C24.5 19.799 19.799 24.5 14 24.5C8.20101 24.5 3.5 19.799 3.5 14C3.5 8.20101 8.20101 3.5 14 3.5C19.799 3.5 24.5 8.20101 24.5 14Z"
-                    stroke="#0F172A"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-              <span className="font-semibold text-[#282828] text-xl">FAQs</span>
-            </div>
-            <p className="text-[#434343] mb-4">
-              Read our FAQs to get answers or find more information about our
-              company.
-            </p>
-            <p className="text-[#434343] mb-4">
-              For a Seamless experience, please send an email to{" "}
-              <a href="mailto:help@layer3.com.ng" className="underline">
-                help@layer3.com.ng
-              </a>
-              .
-            </p>
-            <a
-              href="#faqs"
-              className="mt-auto text-sm text-[#EB1C29] font-normal flex items-center"
-            >
-              Read FAQs <span className="ml-1">→</span>
-            </a>
-          </div>
+          ))}
         </div>
       </section>
 

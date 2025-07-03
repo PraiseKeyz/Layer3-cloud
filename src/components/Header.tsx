@@ -44,7 +44,9 @@ export default function Header() {
     pathname === "/platform-as-a-service" ||
     pathname === "/backup-service" ||
     pathname === "/disaster-recovery" ||
-    pathname === "/kubernetes";
+    pathname === "/kubernetes" ||
+    pathname === "/careers" ||
+    pathname === "/industry-solutions";
 
   return (
     <header
